@@ -1,0 +1,10 @@
+function [Xnorm] = normalize(X)
+
+Mean=mean(X, 2);
+X(1,:)=X(1,:)-Mean(1);
+X(2,:)=X(2,:)-Mean(2);
+S1=mean(sqrt(diag(X'*X)))/sqrt(2);
+X(1:2,:)=X(1:2,:)/S1;
+Xnorm=[eye(2)/S1,-Mean(1:2)/S;0 0 1];
+
+end

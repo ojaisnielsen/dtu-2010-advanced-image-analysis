@@ -1,0 +1,19 @@
+%% Load
+Im87=freadenvit('thika87');
+Im89=freadenvit('thika89');
+% imshowrgb(Im87, [3 2 1], 3);
+% imshowrgb(Im89, [3 2 1], 3);
+
+%% Normalize
+
+[m,n,p] = size(Im87);
+Im87n = [reshape(Im87(:,:,1), m*n, 1), reshape(Im87(:,:,2),m*n, 1), reshape(Im87(:,:,3), m*n, 1)];
+Im87n = Im87n - ones(m*n, 1) * mean(Im87n);
+C = cov(Im87n)
+
+
+
+
+
+
+
